@@ -10,6 +10,10 @@ import { formLabelClasses } from '@mui/material';
 export default function Navbar() {
   const navigate = useNavigate()
   const user = false
+  const handleLogout = () => {
+    //! clear user data
+    navigate("login");
+  };
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" color="secondary">
@@ -21,8 +25,8 @@ export default function Navbar() {
             Clarusway News
           </Typography>
           {user ? 
-          (<button color='inherit'>Logout</button>):
-          (<button color='inherit' onClick={()=> navigate("/")}>Login</button>)
+          (<button color='inherit'onClick={handleLogout}>Logout</button>):
+          (<button color='inherit' onClick={()=>navigate("/")}>Login</button>)
          }
         
             <Button color="inherit">Login </Button>
