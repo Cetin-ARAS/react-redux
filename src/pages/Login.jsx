@@ -7,7 +7,7 @@ import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { setUser } from '../features/authSlice';
 import { useDispatch } from 'react-redux';
 
@@ -15,15 +15,15 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+ 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(setUser({ email, password }));
+    //? sign ın denince kullanıcı tarafından emaıl ve passwordu user statetine aktarmak lazım
     setEmail('');
     setPassword('');
     navigate('/');
-  };
+    
 
   return (
     <Container component="main" maxWidth="xs">
