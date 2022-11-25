@@ -6,10 +6,12 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { formLabelClasses } from '@mui/material';
+import { useSelector } from 'react-redux';
 
 export default function Navbar() {
   const navigate = useNavigate()
-  const user = false
+  const {user} = useSelector((state) => state.auth)    //*dest... yaptık
+
   const handleLogout = () => {
     //! clear user data
     navigate("login");

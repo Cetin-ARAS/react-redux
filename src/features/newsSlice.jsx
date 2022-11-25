@@ -10,8 +10,7 @@ const newsSlice = createSlice({
     reducers:{
       
         }, 
-    },
-});
+    });
 
 export const {setUser, clearUser} = authSlice.actions;
 

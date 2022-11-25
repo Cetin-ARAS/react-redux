@@ -15,15 +15,16 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
- 
+  const dispatch = useDispatch();                             //? dispatch bir fonk. ama hooktan gelmesı lazım
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => {   //? verileri buraya kaydet diyoruz bu fonksiyonla--sign yapınca user handleSubmit çalışır.
     e.preventDefault();
     //? sign ın denince kullanıcı tarafından emaıl ve passwordu user statetine aktarmak lazım
+    dispatch(setUser({ email, password }));    //? gelen veriyi email ve password olarak obje formatında setUser fonksiyonuna gönderir
     setEmail('');
     setPassword('');
     navigate('/');
-    
+  }
 
   return (
     <Container component="main" maxWidth="xs">
